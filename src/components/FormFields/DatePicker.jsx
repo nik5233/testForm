@@ -13,7 +13,7 @@ import DatePicker from '@mui/lab/DatePicker';
 
 export default function DatePickerField(props) {
   const [field, meta, helper] = useField(props);
-  const { touched, error } = meta;
+  // const { touched, error } = meta;
   const { setValue } = helper;
   // const isError = touched && error && true;
   const { value } = field;

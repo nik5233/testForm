@@ -1,4 +1,4 @@
-export default {
+const formModel = {
   formId: 'FullandFinalSettlement',
   formField: {
     // page 1
@@ -122,3 +122,5 @@ export default {
     }
   }
 };
+
+export default formModel

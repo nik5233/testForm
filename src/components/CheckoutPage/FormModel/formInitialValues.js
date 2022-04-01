@@ -43,7 +43,7 @@ const {
   }
 } = fnfSettlementFormModel;
 
-export default {
+let initialFormValues = {
   // [firstName.name]: 'nikhil',
   // [lastName.name]: 'alakri',
   // [address1.name]: 'dhawd wd',
@@ -84,3 +84,5 @@ export default {
   [duesClearedThree.name] : false,
   [duesClearedFour.name] : false,
 };
+
+export default initialFormValues
