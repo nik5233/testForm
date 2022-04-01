@@ -1,7 +1,7 @@
 import { makeStyles } from '@mui/styles';
 export default makeStyles(theme => ({
   stepper: {
-    padding: theme.spacing(3, 0, 5),
+    // padding: theme.spacing(0, 2),
     backgroundColor: '#e3e3e3'
   },
   buttons: {
