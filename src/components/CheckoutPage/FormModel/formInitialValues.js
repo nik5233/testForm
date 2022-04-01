@@ -1,18 +1,6 @@
 import fnfSettlementFormModel from './fnfSettlementFormModel';
 const {
   formField: {
-    // firstName,
-    // lastName,
-    // address1,
-    // city,
-    // zipcode,
-    // country,
-    // useAddressForPaymentDetails,
-    // nameOnCard,
-    // cardNumber,
-    // expiryDate,
-    // cvv,
-
     dateOfResignation,
     reasonForLeaving,
     noticePeriodRequested,
@@ -44,18 +32,6 @@ const {
 } = fnfSettlementFormModel;
 
 let initialFormValues = {
-  // [firstName.name]: 'nikhil',
-  // [lastName.name]: 'alakri',
-  // [address1.name]: 'dhawd wd',
-  // [city.name]: '',
-  // [zipcode.name]: '32233',
-  // [country.name]: '',
-  // [useAddressForPaymentDetails.name]: false,
-  // [nameOnCard.name]: 'ddawda',
-  // [cardNumber.name]: '4111111111111',
-  // [expiryDate.name]: '',
-  // [cvv.name]: '322',
-
   [dateOfResignation.name]: '',
   [reasonForLeaving.name]: '',
   [noticePeriodRequested.name]: '',

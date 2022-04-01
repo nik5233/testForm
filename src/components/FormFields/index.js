@@ -5,6 +5,8 @@ import SelectField from './SelectField';
 import DatePicker from './DatePicker';
 import TextAreaField from './TextAreaField'
 import SwitchField from './SwitchField'
+import UnstyledInputField from './UnstyledInputField'
+
 export { 
     InputField, 
     CheckboxField, 
@@ -12,5 +14,6 @@ export {
     // DatePickerField, 
     DatePicker,
     TextAreaField,
-    SwitchField
+    SwitchField,
+    UnstyledInputField
 };

@@ -1,7 +1,8 @@
 import React from 'react';
+import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
@@ -11,6 +12,29 @@ import {
   // InputField, 
   SwitchField
 } from '../../FormFields';
+
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+	[`&.${tableCellClasses.head}`]: {
+	  backgroundColor: theme.palette.action.hover,
+	  color: theme.palette.common.black,
+	  fontWeight: 'bold',
+		borderRight: `1px solid #d7d4d4`
+	},
+	[`&.${tableCellClasses.body}`]: {
+	  fontSize: 14,
+	  borderRight: `1px solid #d7d4d4`
+	},
+  }));
+  
+  const StyledTableRow = styled(TableRow)(({ theme }) => ({
+	'&:nth-of-type(even)': {
+	  backgroundColor: theme.palette.action.hover,
+	},
+	// hide last border
+	'&:last-child td, &:last-child th': {
+	//   border: 0,
+	},
+  }));
 
 function createData(DepartmentName,
   DuesCleared,
@@ -32,31 +56,31 @@ const rows = [
 export default function LeaveEncashmentForm(props) {
   return (
     <div className="p-4">
-      <TableContainer component={Paper}>
+      <TableContainer component={Paper} style={{border: '1px solid #d7d4d4'}}>
       <Table sx={{ minWidth: 650 }} >
         <TableHead >
           <TableRow>
-            <TableCell>Department Name</TableCell>
-            <TableCell align="center">Dues Cleared</TableCell>
-            <TableCell align="left">Approving Authority</TableCell>
+            <StyledTableCell>Department Name</StyledTableCell>
+            <StyledTableCell align="center">Dues Cleared</StyledTableCell>
+            <StyledTableCell align="left">Approving Authority</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
-            <TableRow
+            <StyledTableRow
               key={row.DepartmentName}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              // sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell component="th" scope="row">
+              <StyledTableCell component="th" scope="row">
                 {row.DepartmentName}
-              </TableCell>
-              <TableCell align="center">
+              </StyledTableCell>
+              <StyledTableCell align="center">
                 <SwitchField name={row.DuesCleared} color="primary" />
-              </TableCell>
-              <TableCell align="left">
+              </StyledTableCell>
+              <StyledTableCell align="left">
                 {row.ApprovingAuthority}
-              </TableCell>              
-            </TableRow>
+              </StyledTableCell>              
+            </StyledTableRow>
           ))}
         </TableBody>
       </Table>

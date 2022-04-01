@@ -8,13 +8,15 @@ import {
 } from '@mui/material';
 import { Formik, Form } from 'formik';
 
+import CloseIcon from '@mui/icons-material/Close';
+import DoneIcon from '@mui/icons-material/Done';
+
 import ResignationForm from './Forms/ResignationForm';
 import LeaveEncashmentForm from './Forms/LeaveEncashmentForm';
 import DepartmentClearance from './Forms/DepartmentClearance';
 import AssetChecklist from './Forms/AssetChecklist';
 
-// import ReviewOrder from './ReviewOrder';
-import CheckoutSuccess from './CheckoutSuccess';
+import FnfSuccess from './FnfSuccess/FnfSuccess';
 
 import validationSchema from './FormModel/validationSchema';
 import fnfSettlementFormModel from './FormModel/fnfSettlementFormModel';
@@ -35,14 +37,12 @@ function _renderStepContent(step) {
       return <DepartmentClearance formField={formField} />;
     case 3:
       return <AssetChecklist formField={formField} />;
-    // case 4:
-    //   return <ReviewOrder />;
     default:
       return <div>Not Found</div>;
   }
 }
 
-export default function CheckoutPage() {
+export default function FnfSettlement() {
   const classes = useStyles();
   const [activeStep, setActiveStep] = useState(0);
   const currentValidationSchema = validationSchema[activeStep];
@@ -78,25 +78,16 @@ export default function CheckoutPage() {
 
   return (
     <React.Fragment>
-      {/* <Typography component="h1" variant="h4" align="center">
-        Checkout
-      </Typography> */}
       <Stepper activeStep={activeStep} className={classes.stepper}>
-        {/* <StepConnector
-          classes={{
-            line: classes.connector
-          }}
-        > */}
         {steps.map(label => (
           <Step key={label}>
             <StepLabel>{label}</StepLabel>
           </Step>
         ))}
-        {/* </StepConnector > */}
       </Stepper>
       <React.Fragment>
         {activeStep === steps.length ? (
-          <CheckoutSuccess />
+          <FnfSuccess />
         ) : (
           <Formik
             initialValues={formInitialValues}
@@ -109,9 +100,12 @@ export default function CheckoutPage() {
 
                 <div className={classes.buttons}>
                   {activeStep !== 0 && (
-                    <Button onClick={_handleBack} className={classes.button}>
-                      Cancels
+                    <div className={classes.wrapper}>
+                    <Button onClick={_handleBack} variant="contained"
+                    color="secondary" className={classes.button} startIcon={<CloseIcon />} >
+                      Cancel
                     </Button>
+                    </div>
                   )}
                   <div className={classes.wrapper}>
                     <Button
@@ -120,6 +114,7 @@ export default function CheckoutPage() {
                       variant="contained"
                       color="primary"
                       className={classes.button}
+                      startIcon={<DoneIcon />}
                     >
                       {isLastStep ? 'Submit' : 'Save'}
                     </Button>

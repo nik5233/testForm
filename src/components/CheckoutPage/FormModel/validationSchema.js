@@ -1,51 +1,64 @@
 // import * as Yup from 'yup';
 // import moment from 'moment';
-// import checkoutFormModel from './checkoutFormModel';
+// import formModel from './fnfSettlementFormModel';
 // const {
 //   formField: {
-//     firstName,
-//     lastName,
-//     address1,
-//     city,
-//     zipcode,
-//     country,
-//     nameOnCard,
-//     cardNumber,
-//     expiryDate,
-//     cvv
+//     dateOfResignation,
+//     reasonForLeaving,
+//     noticePeriodRequested,
+//     noticePeriodApproved,
+//     excessNoticePeriod,
+//     lastWorkingDate,
+//     resignationLetter,
+
+//     availableEncashTypeOne,
+//     availableEncashTypeTwo,
+//     availableEncashTypeThree,
+//     availableEncashTypeFour,
+//     EncashTypeOne,
+//     EncashTypeTwo,
+//     EncashTypeThree,
+//     EncashTypeFour,
+//     availableInNoticeTypeOne,
+//     availableInNoticeTypeTwo,
+//     availableInNoticeTypeThree,
+//     availableInNoticeTypeFour,
+
+//     duesClearedTypeOneOne,
+//     duesClearedTypeOneTwo,
+//     duesClearedTypeOneThree,
+//     duesClearedTypeOneFour,
+
+//     returnedOne,
+//     returnedTwo,
+//     returnedThree,
+//     returnedFour,
+//     duesClearedOne,
+//     duesClearedTwo,
+//     duesClearedThree,
+//     duesClearedFour
 //   }
-// } = checkoutFormModel;
+// } = formModel;
 
 // const visaRegEx = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
 
 // export default [
 //   Yup.object().shape({
-//     [firstName.name]: Yup.string().required(`${firstName.requiredErrorMsg}`),
-//     [lastName.name]: Yup.string().required(`${lastName.requiredErrorMsg}`),
-//     [address1.name]: Yup.string().required(`${address1.requiredErrorMsg}`),
-//     [city.name]: Yup.string()
+//     [resignationLetter.name]: Yup.string().required(`${resignationLetter.requiredErrorMsg}`),
+//     [reasonForLeaving.name]: Yup.string()
 //       .nullable()
-//       .required(`${city.requiredErrorMsg}`),
-//     [zipcode.name]: Yup.string()
-//       .required(`${zipcode.requiredErrorMsg}`)
+//       .required(`${reasonForLeaving.requiredErrorMsg}`),
+//     [noticePeriodRequested.name]: Yup.string()
+//       .required(`${noticePeriodRequested.requiredErrorMsg}`)
 //       .test(
 //         'len',
-//         `${zipcode.invalidErrorMsg}`,
+//         `${noticePeriodRequested.invalidErrorMsg}`,
 //         val => val && val.length === 5
 //       ),
-//     [country.name]: Yup.string()
+//       [lastWorkingDate.name]: Yup.string()
 //       .nullable()
-//       .required(`${country.requiredErrorMsg}`)
-//   }),
-//   Yup.object().shape({
-//     [nameOnCard.name]: Yup.string().required(`${nameOnCard.requiredErrorMsg}`),
-//     [cardNumber.name]: Yup.string()
-//       .required(`${cardNumber.requiredErrorMsg}`)
-//       .matches(visaRegEx, cardNumber.invalidErrorMsg),
-//     [expiryDate.name]: Yup.string()
-//       .nullable()
-//       .required(`${expiryDate.requiredErrorMsg}`)
-//       .test('expDate', expiryDate.invalidErrorMsg, val => {
+//       .required(`${lastWorkingDate.requiredErrorMsg}`)
+//       .test('lastWorkingDate', lastWorkingDate.invalidErrorMsg, val => {
 //         if (val) {
 //           const startDate = new Date();
 //           const endDate = new Date(2050, 12, 31);
@@ -56,8 +69,8 @@
 //         }
 //         return false;
 //       }),
-//     [cvv.name]: Yup.string()
-//       .required(`${cvv.requiredErrorMsg}`)
-//       .test('len', `${cvv.invalidErrorMsg}`, val => val && val.length === 3)
+//   }),
+//   Yup.object().shape({
+
 //   })
 // ];
