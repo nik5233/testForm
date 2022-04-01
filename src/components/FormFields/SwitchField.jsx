@@ -6,7 +6,10 @@ import {Switch, Stack, Typography} from '@mui/material';
 
 export default function SwitchField(props) {
     const { errorText, ...rest } = props;
-    const [field, meta] = useField(props);
+    const [
+        field, 
+        // meta
+    ] = useField(props);
 
   return (
     <div>

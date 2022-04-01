@@ -15,7 +15,7 @@ export default function DatePickerField(props) {
   const [field, meta, helper] = useField(props);
   const { touched, error } = meta;
   const { setValue } = helper;
-  const isError = touched && error && true;
+  // const isError = touched && error && true;
   const { value } = field;
   const [selectedDate, setSelectedDate] = useState(null);
 

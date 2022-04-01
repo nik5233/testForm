@@ -2,10 +2,7 @@ import React from 'react';
 // import { Paper, CssBaseline } from '@material-ui/core';
 import { Paper, CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
-import { createTheme } from '@mui/material/styles'
-
-import Header from '../Header';
-import Footer from '../Footer';
+// import { createTheme } from '@mui/material/styles'
 
 import { theme, useStyle } from './styles';
 
@@ -16,11 +13,9 @@ export default function MaterialLayout(props) {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      {/* <Header /> */}
       <div className={classes.root}>
         <Paper className={classes.paper}>{children}</Paper>
       </div>
-      {/* <Footer /> */}
     </ThemeProvider>
   );
 }
