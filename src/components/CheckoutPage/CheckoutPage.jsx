@@ -44,7 +44,7 @@ function _renderStepContent(step) {
 
 export default function CheckoutPage() {
   const classes = useStyles();
-  const [activeStep, setActiveStep] = useState(3);
+  const [activeStep, setActiveStep] = useState(0);
   const currentValidationSchema = validationSchema[activeStep];
   const isLastStep = activeStep === steps.length - 1;
 
