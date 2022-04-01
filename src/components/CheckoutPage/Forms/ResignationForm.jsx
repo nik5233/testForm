@@ -1,6 +1,15 @@
 import React from 'react';
-import { Grid, Typography } from '@mui/material';
-import { InputField, CheckboxField, SelectField, DatePicker, TextAreaField } from '../../FormFields';
+import { 
+  Grid, 
+  // Typography 
+} from '@mui/material';
+import { 
+  InputField, 
+  // CheckboxField, 
+  SelectField, 
+  DatePicker, 
+  TextAreaField 
+} from '../../FormFields';
 
 const reasonsForLeaving = [
   {

@@ -4,7 +4,6 @@ import {
   Step,
   StepLabel,
   Button,
-  Typography,
   CircularProgress
 } from '@mui/material';
 import { Formik, Form } from 'formik';
@@ -14,7 +13,7 @@ import LeaveEncashmentForm from './Forms/LeaveEncashmentForm';
 import DepartmentClearance from './Forms/DepartmentClearance';
 import AssetChecklist from './Forms/AssetChecklist';
 
-import ReviewOrder from './ReviewOrder';
+// import ReviewOrder from './ReviewOrder';
 import CheckoutSuccess from './CheckoutSuccess';
 
 import validationSchema from './FormModel/validationSchema';
@@ -111,7 +110,7 @@ export default function CheckoutPage() {
                 <div className={classes.buttons}>
                   {activeStep !== 0 && (
                     <Button onClick={_handleBack} className={classes.button}>
-                      CAncel
+                      Cancels
                     </Button>
                   )}
                   <div className={classes.wrapper}>
